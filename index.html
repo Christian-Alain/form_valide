@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Validation de formulaire avec javaScript</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    </head>
+    <body>
+        <main>
+            <div class="image">
+                <img src="images/manager1.jpg" alt="">
+            </div>
+            
+            <div class="formulaire">
+                <div class="entete">
+                    <p>
+                        Already have an account? 
+                    </p>
+                    <button>SIGN UP</button>
+                </div>
+                <p><strong> Welcome to Focus!</strong> <br><span>&#160; Register your account</span></p>
+                <form action="" method="" name="myform" id="myform">
+                    <div class="form_group">
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" for="name" placeholder="Ch|" minlength=60>
+                    </div>
+                    <span id="erreur"></span>
+                    <div class="form_group">
+                        <label for="mail">Email</label><br>
+                        <input type="text" id="mail" for="mail" placeholder="focus001@gmail.com" >
+                    </div>
+                    <span id="erreur"></span>
+                    <div class="form_group">
+                        <label for="pass">Password</label><br>
+                        <input type="password" id="pass" for="pass" placeholder="8+ caractere" >
+                    </div>
+                    <span id="erreur"></span>
+                    <div class="form_group">
+                        <label for="conf_pass">Confirmer Password</label><br>
+                        <input type="password" id="conf_pass" for="conf_pass" placeholder="8+ caractere" >
+                    </div>
+                    <span id="erreur"></span>
+                    <button type="button"  onclick="ee()">Login</button>
+                </form>
+                <div class="botton">
+                    <p>Create account with</p>
+                    <div class="social">
+                        <img src="images/facebook.png" alt="">
+                    </div>
+                    <div class="social">
+                        <img src="images/linkedin.png" alt="">
+                    </div>
+                    <div class="social">
+                        <img src="images/google.png" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+        <script>
+            //script pour valider un formulaire
+             // let username = document.forms["myform"]["name"];
+                // let myerror = document.getElementById("error");
+                // let myregex = /^[a-zA-Z-\s]+$/; //les expressions regulieres
+                // let mymail = document.forms["myform"]["mail"];
+                // let pass = document.forms["myform"]["pass"];
+                // let conf_pass = document.forms["myform"]["conf_pass"];
+            // function valider(){
+            //     var formu = document.forms['myform'];
+            //     if(formu.element['name'].value != ""){
+            //         document.getElementById('error').textContent = 'OK'
+            //     }
+            //     else{
+            //         document.getElementById('error').textContent = 'veuillez renseigner tous les champs'
+            //     }
+            // else if(myregex.test (username) == false){
+            //             myerror.textContent = "le nom doit comporter des tirets et letres";
+            //             myerror.style.color = "red";
+            //             v.preventDefault();
+            //         }
+             //     else{
+            //         myerror.textContent ="nikel";
+            //     }
+            //   if(mymail.value == "") {
+            //     myerror.textContent = "veullez entrer votre mail";
+            //         myerror.style.color = "red";
+            //         v.preventDefault();
+            //   }
+            // }
+            
+    
+            function ee(){
+                let erreur = document.getElementById("erreur");
+                let username = document.getElementById("name").value;
+                let mail = document.getElementById("mail").value;
+                let pass = document.getElementById("pass").value;
+                let conf_pass = document.getElementById("conf_pass").value;
+                let exten_g = "@gmail.com";
+                let exten_ya = "@yahoo.com";
+                let exten_y = "@ymail.com";
+                let exten_out = "@outlook.com";
+                let g = mail.search(exten_g);
+                let ya = mail.search(exten_ya);
+                let y = mail.search(exten_y);
+                let out = mail.search(exten_out);
+                
+                if(username == "" ){
+                    erreur.innerHTML = "veuillez entrer un nom";
+                    erreur.style.color = "red";
+                    // alert('veuillez un nom'); 
+                    
+                }
+                else if(username < 2 && username > 60){
+                    erreur.innerHTML = "veuillez saisir plus de deux caractere";
+                    erreur.style.color = "red";
+                }
+               
+                // recherche dans le mail des extension de mail
+                
+                if(out >= 1 || y >= 1 || ya >= 1 || g >= 1){
+                    erreur.innerHTML = "votre mail n'est pas au bon format";
+                    erreur.style.color = "red";
+                    // alert('adreese mail incorrect'); 
+                }
+                if(pass != conf_pass){
+                    erreur.innerHTML = "les mots de passe ne sont pas identique";
+                    erreur.style.color = "red";
+                }
+                else{
+                    erreur.innerHTML = "tous les champs doivent etre renseigné";
+                    erreur.style.color = "red";
+                }
+           
+            }   
+
+        </script>
+    </body>
+</html>
+

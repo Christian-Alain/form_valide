@@ -1,0 +1,91 @@
+/* input:invalid{
+    border: red;
+}
+input:valid{
+    border: green;
+} */
+
+main{
+    display: flex;
+  box-shadow: 10px 0px 20px rgb(196, 196, 196);
+   
+ 
+}
+
+
+.image{
+    flex:4;
+}
+.image img{
+    margin: 25px;
+}
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    padding: 15px;
+}
+
+.entete{
+    display: flex;
+    justify-content: right;
+    /* margin: 20px; */
+}
+.entete button{
+    border: 1px solid #8800ff;
+    border-radius: 25px;
+    color:  rgb(223, 223, 223);
+    background: transparent;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px;
+    font-size:x-small;
+}
+.entete p{
+    font-size: 12;
+    color: rgb(223, 223, 223);
+    margin-right: 10px;
+}
+.formulaire p strong{
+    font-size: 2.5rem;
+}
+.formulaire p span{
+    font-size: .8rem;
+    color: rgb(223, 223, 223);
+}
+.form_group input{
+    /* display: block;
+    margin-bottom: 10px; */
+    width: 350px;
+    height: 30px;
+    margin-bottom: 1rem;
+
+}
+.form_group input:focus{
+    outline-color: #8800ff;
+}
+.botton{
+    display: flex;
+    
+}
+.botton .social{
+    margin: 10px;
+    
+}
+.botton img{
+    width: 20px;
+    cursor: pointer;
+}
+.botton p{
+    color: rgb(223, 223, 223);
+    font-size: .9rem;
+}
+form button{
+    background: #7336ff;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border-radius: 25px;
+}
